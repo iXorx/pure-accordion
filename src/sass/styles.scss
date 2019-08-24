@@ -1,0 +1,17 @@
+body {
+    background: whitesmoke;
+    color: gray;
+    font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
+}
+
+dt {
+    /*font-family: 'Playfair Display', 'Times New Roman', Times, serif;*/
+    padding: 20px;
+    
+    text-transform: uppercase;
+
+    dd + & {
+        border-top: 1px solid #ddd;
+    }
+}
+
