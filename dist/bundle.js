@@ -86,18 +86,6 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/js/helloworld.js":
-/*!******************************!*\
-  !*** ./src/js/helloworld.js ***!
-  \******************************/
-/*! exports provided: hello */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"hello\", function() { return hello; });\nvar hello = function hello() {\n  return console.log('Hello World ES6');\n};\n\n//# sourceURL=webpack:///./src/js/helloworld.js?");
-
-/***/ }),
-
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -106,7 +94,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _helloworld__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./helloworld */ \"./src/js/helloworld.js\");\n\n\nObject(_helloworld__WEBPACK_IMPORTED_MODULE_1__[\"hello\"])();\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\nfunction onClick(event) {\n  var activeElement = document.querySelectorAll('[data-active]');\n  activeElement.forEach(function (e) {\n    return e.removeAttribute('data-active');\n  });\n\n  if (activeElement[0] !== event.target) {\n    event.target.setAttribute('data-active', 'true');\n  }\n}\n\nvar setClickListener = function setClickListener(element) {\n  return element.addEventListener('click', onClick);\n};\n\nfunction setClick() {\n  document.querySelectorAll('dt').forEach(setClickListener);\n}\n\nfunction init() {\n  setClick();\n  createNewElementInDescriptiveList('Section Dynamic', 'Section Dynamic Content...');\n  createNewElementInDescriptiveList('Section Dynamic 2', 'Section Dynamic Content 2...');\n}\n\nvar createNewElementInDescriptiveList = function createNewElementInDescriptiveList(title, content) {\n  var newDt = document.createElement('dt');\n  setClickListener(newDt);\n  var newContentDt = document.createTextNode(title);\n  newDt.appendChild(newContentDt);\n  var newDd = document.createElement('dd');\n  var newP = document.createElement('p');\n  var newContentDd = document.createTextNode(content);\n  newP.appendChild(newContentDd);\n  newDd.appendChild(newP);\n  var targetDl = document.querySelector('dl');\n  targetDl.appendChild(newDt);\n  targetDl.appendChild(newDd);\n};\n\ndocument.addEventListener('DOMContentLoaded', init);\n\n//# sourceURL=webpack:///./src/js/index.js?");
 
 /***/ }),
 

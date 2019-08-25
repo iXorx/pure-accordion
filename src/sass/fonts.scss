@@ -25,3 +25,14 @@
          url('../fonts/source-sans-pro-v13-latin-regular.ttf') format('truetype'), /* Safari, Android, iOS */
          url('../fonts/source-sans-pro-v13-latin-regular.svg#SourceSansPro') format('svg'); /* Legacy iOS */
   }
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon.eot?5fai7w');
+  src:  url('../fonts/icomoon.eot?5fai7w#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon.ttf?5fai7w') format('truetype'),
+    url('../fonts/icomoon.woff?5fai7w') format('woff'),
+    url('../fonts/icomoon.svg?5fai7w#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}

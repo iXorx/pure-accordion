@@ -18,17 +18,114 @@
   src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url(fonts/8ddcafb98403e3c126c5b64545911b0c.eot?#iefix) format("embedded-opentype"), url(fonts/899c8f78ce650d4009d42443897aa723.woff2) format("woff2"), url(fonts/5cc3aae674ea3b199313b3b83bd795bc.woff) format("woff"), url(fonts/123352716b6df5cc7d06e6edb5f9554b.ttf) format("truetype"), url(fonts/3d536f380466c415ea74e04b54dcc087.svg#SourceSansPro) format("svg");
   /* Legacy iOS */
 }
+@font-face {
+  font-family: "icomoon";
+  src: url(fonts/df55fdc5e08d98cf758e48641e4e7aae.eot);
+  src: url(fonts/df55fdc5e08d98cf758e48641e4e7aae.eot#iefix) format("embedded-opentype"), url(fonts/b3c58eddb100578de27814353ee8ac46.ttf) format("truetype"), url(fonts/da165d7795071890a641ad8021925b0b.woff) format("woff"), url(fonts/d2e0235336167221fb27bd09a7f5437d.svg#icomoon) format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
+[class^=icon-], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-loader:before {
+  content: "q";
+}
+
+.icon-minus-circle:before {
+  content: "-";
+}
+
+.icon-package:before {
+  content: "a";
+}
+
+.icon-plus-circle:before {
+  content: "+";
+}
+
+.icon-truck:before {
+  content: "t";
+}
+
+.icon-user:before {
+  content: "i";
+}
+
+.icon-youtube:before {
+  content: "p";
+}
+
 body {
   background: whitesmoke;
   color: gray;
   font-family: "Source Sans Pro", Arial, Helvetica, sans-serif;
 }
 
+dl {
+  min-width: 330;
+  margin: auto;
+  width: 90%;
+}
+
 dt {
-  /*font-family: 'Playfair Display', 'Times New Roman', Times, serif;*/
+  font-family: "Playfair Display", "Times New Roman", Times, serif;
   padding: 20px;
   text-transform: uppercase;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+dt:after, dt:before {
+  font-family: "icomoon" !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  content: "p";
+}
+dt:after {
+  padding-left: 10px;
+  float: right;
+  content: "+";
+}
+dt:before {
+  padding-right: 10px;
+}
+dt:nth-child(1):before {
+  content: "i";
+}
+dt:nth-child(3):before {
+  content: "t";
+}
+dt:nth-child(5):before {
+  content: "a";
 }
 dd + dt {
   border-top: 1px solid #ddd;
+}
+dt[data-active]:after {
+  content: "-";
+}
+
+dd {
+  display: none;
+}
+dt[data-active] + dd {
+  display: block;
 }

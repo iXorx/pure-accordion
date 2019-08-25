@@ -4,14 +4,75 @@ body {
     font-family: 'Source Sans Pro', Arial, Helvetica, sans-serif;
 }
 
+dl {
+    min-width: 330;
+    margin: auto;
+    width: 90%;
+}
+
 dt {
-    /*font-family: 'Playfair Display', 'Times New Roman', Times, serif;*/
-    padding: 20px;
-    
+    font-family: 'Playfair Display', 'Times New Roman', Times, serif;
+    padding: 20px;    
     text-transform: uppercase;
+    font-size: 1.5rem;
+    cursor: pointer;
+
+    &:after,
+    &:before {
+        font-family: 'icomoon' !important;
+        speak: none;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        line-height: 1;
+
+        /* Better Font Rendering =========== */
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+
+        content: "\70";
+    }
+    &:after {
+        padding-left: 10px;
+        float: right;
+        content: "\2b";
+    }
+    &:before {
+        padding-right: 10px;
+    }
+
+    &:nth-child(1) {
+        &:before {
+            content: "\69";
+        }
+    }
+    &:nth-child(3) {
+        &:before {
+            content: "\74";
+        }
+    }
+    &:nth-child(5) {
+        &:before {
+            content: "\61";
+        }
+    }
 
     dd + & {
         border-top: 1px solid #ddd;
     }
+
+    &[data-active] {
+        &:after {
+            content: "\2d";
+        }
+    }
 }
 
+dd {
+    display: none;
+
+    dt[data-active] + & {
+        display: block;
+    }
+}
