@@ -12,7 +12,8 @@ dl {
 
 dt {
     font-family: 'Playfair Display', 'Times New Roman', Times, serif;
-    padding: 20px;    
+    position: relative;
+    padding: $default-padding 50px $default-padding $default-padding;    
     text-transform: uppercase;
     font-size: 1.5rem;
     cursor: pointer;
@@ -30,16 +31,19 @@ dt {
         /* Better Font Rendering =========== */
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
-
-        content: "\70";
     }
     &:after {
-        padding-left: 10px;
-        float: right;
+        position: absolute;
+        top: $default-padding;
+        right: $default-padding;
         content: "\2b";
+
+        transform: rotate(0deg);
+        transition: all 0.75s;
     }
     &:before {
         padding-right: 10px;
+        content: "\70";
     }
 
     &:nth-child(1) {
@@ -64,15 +68,26 @@ dt {
 
     &[data-active] {
         &:after {
-            content: "\2d";
+            transform: rotate(45deg);
+            //content: "\2d";
         }
     }
 }
 
-dd {
-    display: none;
+dd p {
+    	height: 0; 
+	overflow: hidden;
+
+	transition-property: height;
+	transition-duration: 1s;
+	perspective: 1000px;
+    transform-style: preserve-3d;
+    
 
     dt[data-active] + & {
-        display: block;
+        height: 100px; 
+	transition-property: all; 
+	transition-duration: 1s;
+	transform-origin: top; 
     }
 }

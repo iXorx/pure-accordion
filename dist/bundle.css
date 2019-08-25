@@ -81,7 +81,8 @@ dl {
 
 dt {
   font-family: "Playfair Display", "Times New Roman", Times, serif;
-  padding: 20px;
+  position: relative;
+  padding: 20px 50px 20px 20px;
   text-transform: uppercase;
   font-size: 1.5rem;
   cursor: pointer;
@@ -97,15 +98,18 @@ dt:after, dt:before {
   /* Better Font Rendering =========== */
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  content: "p";
 }
 dt:after {
-  padding-left: 10px;
-  float: right;
+  position: absolute;
+  top: 20px;
+  right: 20px;
   content: "+";
+  transform: rotate(0deg);
+  transition: all 0.75s;
 }
 dt:before {
   padding-right: 10px;
+  content: "p";
 }
 dt:nth-child(1):before {
   content: "i";
@@ -120,12 +124,20 @@ dd + dt {
   border-top: 1px solid #ddd;
 }
 dt[data-active]:after {
-  content: "-";
+  transform: rotate(45deg);
 }
 
-dd {
-  display: none;
+dd p {
+  height: 0;
+  overflow: hidden;
+  transition-property: height;
+  transition-duration: 1s;
+  perspective: 1000px;
+  transform-style: preserve-3d;
 }
-dt[data-active] + dd {
-  display: block;
+dt[data-active] + dd p {
+  height: 100px;
+  transition-property: all;
+  transition-duration: 1s;
+  transform-origin: top;
 }

@@ -3,9 +3,21 @@ import '../sass/main.scss'
 function onClick (event) {
     const activeElement = document.querySelectorAll('[data-active]')
     activeElement.forEach(e => e.removeAttribute('data-active'))
-    if(activeElement[0] !== event.target) {
-        event.target.setAttribute('data-active', 'true')
+    const targetElement = event.target
+    if(activeElement[0] !== targetElement) {
+        targetElement.setAttribute('data-active', 'true')
+        growDiv(targetElement.nextSibling)
     }
+}
+
+function growDiv(growDiv) {
+  if (growDiv.clientHeight) {
+    growDiv.style.height = 0;
+  } else {
+    var wrapper = growDiv.querySelector('p');
+    growDiv.style.height = wrapper.clientHeight + "px";
+  }
+  document.getElementById("more-button").value = document.getElementById("more-button").value == 'Read more' ? 'Read less' : 'Read more';
 }
 
 const setClickListener = (element) =>  element.addEventListener('click', onClick)
