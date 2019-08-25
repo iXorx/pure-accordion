@@ -14,13 +14,7 @@ function setClick () {
     document.querySelectorAll('dt').forEach(setClickListener)
 }
 
-function init () {
-    setClick()
-    createNewElementInDescriptiveList('Section Dynamic', 'Section Dynamic Content...')
-    createNewElementInDescriptiveList('Section Dynamic 2', 'Section Dynamic Content 2...')
-}
-
-const createNewElementInDescriptiveList = (title, content) => {
+const createAndAppendElementInDescriptiveList = (title, content) => {
     const newDt = document.createElement('dt')
     setClickListener(newDt)
     const newContentDt = document.createTextNode(title)
@@ -33,6 +27,23 @@ const createNewElementInDescriptiveList = (title, content) => {
     const targetDl = document.querySelector('dl')
     targetDl.appendChild(newDt)
     targetDl.appendChild(newDd)
+}
+
+export const HOSTNAME = 'https://api.themoviedb.org'
+export const API_KEY = '3a5420a00be0ef520a9a429df97644be'
+export const getPopularUrl = () => `${HOSTNAME}/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1&include_adult-false`
+
+const getAndAppendPopularFilms = () => {
+    fetch(getPopularUrl())
+        .then((res) => res.json())
+        .then((json) => json.results)
+        .then((movies) => movies.forEach(movie => createAndAppendElementInDescriptiveList(movie.title, movie.overview)))
+}
+
+
+function init () {
+    setClick()
+    getAndAppendPopularFilms()
 }
 
 document.addEventListener('DOMContentLoaded', init)
