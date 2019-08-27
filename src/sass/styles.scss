@@ -68,26 +68,18 @@ dt {
 
     &[data-active] {
         &:after {
-            transform: rotate(45deg);
-            //content: "\2d";
+            content: "\2d";
         }
     }
 }
 
-dd p {
-    	height: 0; 
-	overflow: hidden;
-
-	transition-property: height;
-	transition-duration: 1s;
-	perspective: 1000px;
-    transform-style: preserve-3d;
+dd {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.15s;
     
-
     dt[data-active] + & {
-        height: 100px; 
-	transition-property: all; 
-	transition-duration: 1s;
-	transform-origin: top; 
+        max-height: 350px;
+        transition: max-height 1s ease-in-out 0.20s;
     }
 }

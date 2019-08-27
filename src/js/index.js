@@ -1,13 +1,19 @@
 import '../sass/main.scss'
 
 function onClick (event) {
-    const activeElement = document.querySelectorAll('[data-active]')
-    activeElement.forEach(e => e.removeAttribute('data-active'))
-    const targetElement = event.target
-    if(activeElement[0] !== targetElement) {
-        targetElement.setAttribute('data-active', 'true')
-        growDiv(targetElement.nextSibling)
-    }
+  // Clean
+  const dtActiveElement = document.querySelectorAll('[data-active]')
+  dtActiveElement.forEach((element) => {
+    element.removeAttribute('data-active')
+    element.nextElementSibling.style.maxHeight = 0;
+  })
+
+  // Set new active
+  const targetElement = event.target
+  if(dtActiveElement[0] !== targetElement) {
+      targetElement.setAttribute('data-active', 'true')
+      targetElement.nextElementSibling.style.maxHeight = 500;
+  }
 }
 
 function growDiv(growDiv) {
@@ -23,6 +29,7 @@ function growDiv(growDiv) {
 const setClickListener = (element) =>  element.addEventListener('click', onClick)
 
 function setClick () {
+  console.log(document.querySelectorAll('dt'))
     document.querySelectorAll('dt').forEach(setClickListener)
 }
 

@@ -124,20 +124,15 @@ dd + dt {
   border-top: 1px solid #ddd;
 }
 dt[data-active]:after {
-  transform: rotate(45deg);
+  content: "-";
 }
 
-dd p {
-  height: 0;
+dd {
+  max-height: 0;
   overflow: hidden;
-  transition-property: height;
-  transition-duration: 1s;
-  perspective: 1000px;
-  transform-style: preserve-3d;
+  transition: max-height 0.15s;
 }
-dt[data-active] + dd p {
-  height: 100px;
-  transition-property: all;
-  transition-duration: 1s;
-  transform-origin: top;
+dt[data-active] + dd {
+  max-height: 350px;
+  transition: max-height 1s ease-in-out 0.2s;
 }
