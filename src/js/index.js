@@ -10,12 +10,12 @@ import '../sass/main.scss'
  */
 const onClick = (event) => {
     const dtActiveElement = document.querySelectorAll('[data-active]')
+    dtActiveElement.forEach((element) => element.removeAttribute('data-active'))
 
     // Set new active
     const targetElement = event.target
     if (dtActiveElement[0] !== targetElement) {
         // Clean previously selected
-        dtActiveElement.forEach((element) => element.removeAttribute('data-active'))
         targetElement.setAttribute('data-active', 'true')
     }
 }

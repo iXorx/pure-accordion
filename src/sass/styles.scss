@@ -18,6 +18,8 @@ dt {
     text-transform: uppercase;
     font-size: 1.5rem;
     cursor: pointer;
+    color: $default-color;
+    background-color: $default-bg;
 
     &:before {
         font-family: 'icomoon' !important;
@@ -62,9 +64,11 @@ dt {
     }
 
     &[data-active] {
-        padding-top: 100px;
+        padding: 100px 20% 0;
         font-size: 2.5rem;
         text-align: center;
+        color: $active-color;
+        background-color: $active-bg;
 
         &:before {
             right: 0;
@@ -78,6 +82,9 @@ dd {
     overflow: hidden;
     transition: max-height 0.15s;
     margin: 0;
+    padding: 0 20%;
+    color: $active-color;
+    background-color: $active-bg;
     
     dt[data-active] + & {
         max-height: 350px;
