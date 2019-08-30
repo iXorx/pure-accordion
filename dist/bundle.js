@@ -86,15 +86,51 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/js/events.js":
+/*!**************************!*\
+  !*** ./src/js/events.js ***!
+  \**************************/
+/*! exports provided: onClick */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"onClick\", function() { return onClick; });\n/**\r\n * It remove all [data-active] available in the page and\r\n * adds it to the clicked element (dt).\r\n * This [data-active] is controlled by CSS to perform an animation\r\n * control the state open/close of the element content (dd)\r\n * \r\n * @param {MouseEvent} event click event from mouse\r\n */\nvar onClick = function onClick(event) {\n  var dtActiveElement = document.querySelectorAll('[data-active]');\n  dtActiveElement.forEach(function (element) {\n    return element.removeAttribute('data-active');\n  }); // Set new active\n\n  var targetElement = event.target;\n\n  if (dtActiveElement[0] !== targetElement) {\n    // Clean previously selected\n    targetElement.setAttribute('data-active', 'true');\n  }\n};\n\n//# sourceURL=webpack:///./src/js/events.js?");
+
+/***/ }),
+
+/***/ "./src/js/fetchElements.js":
+/*!*********************************!*\
+  !*** ./src/js/fetchElements.js ***!
+  \*********************************/
+/*! exports provided: getAndAppendPopularFilms, createAndAppendElementInDescriptiveList */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getAndAppendPopularFilms\", function() { return getAndAppendPopularFilms; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"createAndAppendElementInDescriptiveList\", function() { return createAndAppendElementInDescriptiveList; });\n/* harmony import */ var _listeners__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./listeners */ \"./src/js/listeners.js\");\n\nvar HOSTNAME = 'https://api.themoviedb.org';\nvar API_KEY = '3a5420a00be0ef520a9a429df97644be';\n\nvar getPopularUrl = function getPopularUrl() {\n  return \"\".concat(HOSTNAME, \"/3/movie/popular?api_key=\").concat(API_KEY, \"&language=en-US&page=1&include_adult-false\");\n};\n/**\r\n * Calls themoviedb popular movies API and adds the movies returned\r\n * in the dl list.\r\n */\n\n\nvar getAndAppendPopularFilms = function getAndAppendPopularFilms() {\n  fetch(getPopularUrl()).then(function (res) {\n    return res.json();\n  }).then(function (json) {\n    return json.results;\n  }).then(function (movies) {\n    return movies.forEach(function (movie) {\n      return createAndAppendElementInDescriptiveList(movie.title, movie.overview);\n    });\n  });\n};\n/**\r\n * Creates a new element in the DOM with the same structure than \r\n * the initial ones and the content passed as a parameter.\r\n * \r\n * @param {string} title the text for the dt element\r\n * @param {string} content the text for the p element inside the dd\r\n */\n\nvar createAndAppendElementInDescriptiveList = function createAndAppendElementInDescriptiveList(title, content) {\n  // create dt\n  var newDt = document.createElement('dt');\n  Object(_listeners__WEBPACK_IMPORTED_MODULE_0__[\"setClickListener\"])(newDt);\n  var newContentDt = document.createTextNode(title);\n  newDt.appendChild(newContentDt); // create dd + p\n\n  var newDd = document.createElement('dd');\n  var newP = document.createElement('p');\n  var newContentDd = document.createTextNode(content);\n  newP.appendChild(newContentDd);\n  newDd.appendChild(newP); // append to dl\n\n  var targetDl = document.querySelector('dl');\n  targetDl.appendChild(newDt);\n  targetDl.appendChild(newDd);\n};\n\n//# sourceURL=webpack:///./src/js/fetchElements.js?");
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
   \*************************/
-/*! exports provided: HOSTNAME, API_KEY, getPopularUrl */
+/*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"HOSTNAME\", function() { return HOSTNAME; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"API_KEY\", function() { return API_KEY; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"getPopularUrl\", function() { return getPopularUrl; });\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n/**\n * It remove all [data-active] available in the page and\n * adds it to the clicked element (dt).\n * This [data-active] is controlled by CSS to perform an animation\n * control the state open/close of the element content (dd)\n * \n * @param {MouseEvent} event click event from mouse\n */\n\nvar onClick = function onClick(event) {\n  var dtActiveElement = document.querySelectorAll('[data-active]');\n  dtActiveElement.forEach(function (element) {\n    return element.removeAttribute('data-active');\n  }); // Set new active\n\n  var targetElement = event.target;\n\n  if (dtActiveElement[0] !== targetElement) {\n    // Clean previously selected\n    targetElement.setAttribute('data-active', 'true');\n  }\n};\n/**\n * Adds the event listener to the element used as a parameter\n * @param {HTMLElement} element target element to set the listener\n */\n\n\nvar setClickListener = function setClickListener(element) {\n  return element.addEventListener('click', onClick);\n};\n/**\n * Sets the listener for the all initial dt\n */\n\n\nvar setClickForAllDt = function setClickForAllDt() {\n  return document.querySelectorAll('dt').forEach(setClickListener);\n};\n/**\n * Creates a new element in the DOM with the same structure than \n * the initial ones and the content passed as a parameter.\n * \n * @param {string} title the text for the dt element\n * @param {string} content the text for the p element inside the dd\n */\n\n\nvar createAndAppendElementInDescriptiveList = function createAndAppendElementInDescriptiveList(title, content) {\n  // create dt\n  var newDt = document.createElement('dt');\n  setClickListener(newDt);\n  var newContentDt = document.createTextNode(title);\n  newDt.appendChild(newContentDt); // create dd + p\n\n  var newDd = document.createElement('dd');\n  var newP = document.createElement('p');\n  var newContentDd = document.createTextNode(content);\n  newP.appendChild(newContentDd);\n  newDd.appendChild(newP); // append to dl\n\n  var targetDl = document.querySelector('dl');\n  targetDl.appendChild(newDt);\n  targetDl.appendChild(newDd);\n};\n\nvar HOSTNAME = 'https://api.themoviedb.org';\nvar API_KEY = '3a5420a00be0ef520a9a429df97644be';\nvar getPopularUrl = function getPopularUrl() {\n  return \"\".concat(HOSTNAME, \"/3/movie/popular?api_key=\").concat(API_KEY, \"&language=en-US&page=1&include_adult-false\");\n};\n/**\n * Calls themoviedb popular movies API and adds the movies returned\n * in the dl list.\n */\n\nvar getAndAppendPopularFilms = function getAndAppendPopularFilms() {\n  fetch(getPopularUrl()).then(function (res) {\n    return res.json();\n  }).then(function (json) {\n    return json.results;\n  }).then(function (movies) {\n    return movies.forEach(function (movie) {\n      return createAndAppendElementInDescriptiveList(movie.title, movie.overview);\n    });\n  });\n};\n/**\n * Set the click for the initial elements and creates the list of films\n */\n\n\nvar init = function init() {\n  setClickForAllDt();\n  getAndAppendPopularFilms();\n}; // main trigger\n\n\ndocument.addEventListener('DOMContentLoaded', init);\n\n//# sourceURL=webpack:///./src/js/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../sass/main.scss */ \"./src/sass/main.scss\");\n/* harmony import */ var _sass_main_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_sass_main_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _listeners__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./listeners */ \"./src/js/listeners.js\");\n/* harmony import */ var _fetchElements__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./fetchElements */ \"./src/js/fetchElements.js\");\n\n\n\n\nwindow.onload = function () {\n  Object(_listeners__WEBPACK_IMPORTED_MODULE_1__[\"setClickForAllDt\"])();\n  Object(_fetchElements__WEBPACK_IMPORTED_MODULE_2__[\"getAndAppendPopularFilms\"])();\n};\n\n//# sourceURL=webpack:///./src/js/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/listeners.js":
+/*!*****************************!*\
+  !*** ./src/js/listeners.js ***!
+  \*****************************/
+/*! exports provided: setClickListener, setClickForAllDt */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"setClickListener\", function() { return setClickListener; });\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"setClickForAllDt\", function() { return setClickForAllDt; });\n/* harmony import */ var _events_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./events.js */ \"./src/js/events.js\");\n\n/**\r\n * Adds the event listener to the element used as a parameter\r\n * @param {HTMLElement} element target element to set the listener\r\n */\n\nvar setClickListener = function setClickListener(element) {\n  return element.addEventListener('click', _events_js__WEBPACK_IMPORTED_MODULE_0__[\"onClick\"]);\n};\n/**\r\n * Sets the listener for the all initial dt\r\n */\n\nvar setClickForAllDt = function setClickForAllDt() {\n  return document.querySelectorAll('dt').forEach(setClickListener);\n};\n\n//# sourceURL=webpack:///./src/js/listeners.js?");
 
 /***/ }),
 

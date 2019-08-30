@@ -5,7 +5,7 @@
   font-weight: 700;
   src: url(fonts/2ec4c26d8d4b3ba3766d0c686d558e23.eot);
   /* IE9 Compat Modes */
-  src: local("Playfair Display Bold"), local("PlayfairDisplay-Bold"), url(fonts/2ec4c26d8d4b3ba3766d0c686d558e23.eot?#iefix) format("embedded-opentype"), url(fonts/df1d9fe12078f6d528730d21f8a653f8.woff2) format("woff2"), url(fonts/6862a76759e8d1c68411c23ac44948f7.woff) format("woff"), url(fonts/f47d42dd80b6fc4c1bf437b89230575b.ttf) format("truetype"), url(fonts/1babbf161b484449b90090b068ab8442.svg#PlayfairDisplay) format("svg");
+  src: local("Playfair Display Bold"), local("PlayfairDisplay-Bold"), url(fonts/2ec4c26d8d4b3ba3766d0c686d558e23.eot?#iefix) format("embedded-opentype"), url(fonts/df1d9fe12078f6d528730d21f8a653f8.woff2) format("woff2"), url(fonts/6862a76759e8d1c68411c23ac44948f7.woff) format("woff"), url(fonts/f47d42dd80b6fc4c1bf437b89230575b.ttf) format("truetype"), url(fonts/e0e7ba020af16e62d2d8ba3f47c239c7.svg#PlayfairDisplay) format("svg");
   /* Legacy iOS */
 }
 /* source-sans-pro-regular - latin */
@@ -15,13 +15,13 @@
   font-weight: 400;
   src: url(fonts/8ddcafb98403e3c126c5b64545911b0c.eot);
   /* IE9 Compat Modes */
-  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url(fonts/8ddcafb98403e3c126c5b64545911b0c.eot?#iefix) format("embedded-opentype"), url(fonts/899c8f78ce650d4009d42443897aa723.woff2) format("woff2"), url(fonts/5cc3aae674ea3b199313b3b83bd795bc.woff) format("woff"), url(fonts/123352716b6df5cc7d06e6edb5f9554b.ttf) format("truetype"), url(fonts/3d536f380466c415ea74e04b54dcc087.svg#SourceSansPro) format("svg");
+  src: local("Source Sans Pro Regular"), local("SourceSansPro-Regular"), url(fonts/8ddcafb98403e3c126c5b64545911b0c.eot?#iefix) format("embedded-opentype"), url(fonts/899c8f78ce650d4009d42443897aa723.woff2) format("woff2"), url(fonts/5cc3aae674ea3b199313b3b83bd795bc.woff) format("woff"), url(fonts/123352716b6df5cc7d06e6edb5f9554b.ttf) format("truetype"), url(fonts/754c63cd1426bff4a89d9bacffc5b883.svg#SourceSansPro) format("svg");
   /* Legacy iOS */
 }
 @font-face {
   font-family: "icomoon";
   src: url(fonts/df55fdc5e08d98cf758e48641e4e7aae.eot);
-  src: url(fonts/df55fdc5e08d98cf758e48641e4e7aae.eot#iefix) format("embedded-opentype"), url(fonts/b3c58eddb100578de27814353ee8ac46.ttf) format("truetype"), url(fonts/da165d7795071890a641ad8021925b0b.woff) format("woff"), url(fonts/d2e0235336167221fb27bd09a7f5437d.svg#icomoon) format("svg");
+  src: url(fonts/df55fdc5e08d98cf758e48641e4e7aae.eot#iefix) format("embedded-opentype"), url(fonts/b3c58eddb100578de27814353ee8ac46.ttf) format("truetype"), url(fonts/da165d7795071890a641ad8021925b0b.woff) format("woff"), url(fonts/3a4581ce37870d4f2c137e1f65fe57c0.svg#icomoon) format("svg");
   font-weight: normal;
   font-style: normal;
 }
