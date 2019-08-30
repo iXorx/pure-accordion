@@ -2,18 +2,19 @@ import { setClickListener } from './listeners'
 
 const HOSTNAME = 'https://api.themoviedb.org'
 const API_KEY = '3a5420a00be0ef520a9a429df97644be'
-const getPopularUrl = () => `${HOSTNAME}/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1&include_adult-false`
+export const getPopularUrl = () => `${HOSTNAME}/3/movie/popular?api_key=${API_KEY}&language=en-US&page=1&include_adult-false`
 
 /**
  * Calls themoviedb popular movies API and adds the movies returned
  * in the dl list.
  */
-export const getAndAppendPopularFilms = () => {
+export const getAndAppendPopularFilms = () => (
     fetch(getPopularUrl())
         .then((res) => res.json())
         .then((json) => json.results)
         .then((movies) => movies.forEach(movie => createAndAppendElementInDescriptiveList(movie.title, movie.overview)))
-}
+        .catch((e) => console.error('error getting popular films: ' + e))
+)
 
 /**
  * Creates a new element in the DOM with the same structure than 
