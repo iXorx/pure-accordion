@@ -35,6 +35,10 @@ Sure to follow the [SUIT](https://suitcss.github.io/) convention when working wi
 
 ## Deployment
 
+As mentioned [here](https://medium.com/linagora-engineering/deploying-your-js-app-to-github-pages-the-easy-way-or-not-1ef8c48424b7) the deployment process consist in pushing the changes into gh-pages branch. The ``/dist`` folder is "connected" with that branch.
+
+To pubblish a new version 
+
 git subtree
 
 ```
