@@ -1,0 +1,30 @@
+// Sizes
+$default-padding: 20px;
+$dl-min-witdh: 330px;
+$dd-max-height: 400px;
+$active-margin: 5px;
+$default-border-radius: 4px;
+
+// Colors
+$primary-color:#666;
+$bg: #f1f1f1;
+$active-bg: #f7f7f7;
+$active-color: #da734f;
+$default-bg: #da6f51;
+$default-color: #a13c3f;
+
+// Fonts
+$body-font: 'Noto Sans', sans-serif;
+$title-font: 'Fjalla One', sans-serif;
+
+// Components
+// active
+$front-color: $primary-color;
+$bg-color: $active-bg; 
+
+//$active-color: $primary-color;
+$active-title-color: $front-color;
+$active-border: 1px solid $front-color;
+
+$hover-color: lighten($default-color, 20)
+ 

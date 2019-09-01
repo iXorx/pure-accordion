@@ -1,0 +1,11 @@
+body {
+    background: whitesmoke;
+    color: gray;
+    //font-family: 'SourceSansPro', Arial, Helvetica, sans-serif;
+    font-family: $body-font;
+
+    @include for-phone-only {    
+        font-size: 1rem; 
+        background: white;
+    }
+}
