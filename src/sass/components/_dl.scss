@@ -2,4 +2,12 @@ dl {
     min-width: $dl-min-witdh;
     margin: auto;
     width: 90%;
+
+    @include for-tablet-landscape-up {
+        width: 70%;
+    }
+
+    @include for-phone-only {    
+        width: 100%;
+    }
 }

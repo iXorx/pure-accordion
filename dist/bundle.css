@@ -75,6 +75,16 @@ dl {
   margin: auto;
   width: 90%;
 }
+@media (min-width: 900px) {
+  dl {
+    width: 70%;
+  }
+}
+@media (max-width: 599px) {
+  dl {
+    width: 100%;
+  }
+}
 
 dt {
   font-family: "Fjalla One", sans-serif;
@@ -154,8 +164,6 @@ dt[data-active]:before {
 body {
   background: #F5F7DC;
   font-family: "Noto Sans", sans-serif;
-  /*@include for-phone-only {    
-      font-size: 1rem; 
-      background: white;
-  }*/
+  margin: 0;
+  padding: 5px;
 }
