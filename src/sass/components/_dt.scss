@@ -6,8 +6,8 @@ dt {
     text-transform: uppercase;
     font-size: 1.5rem;
     cursor: pointer;
-    color: $default-color;
-    background-color: $default-bg;
+    color: $default-title-color;
+    background-color: $default-bg-color;
 
     &:first-child {
         border-radius: $default-border-radius $default-border-radius 0 0; 
@@ -21,7 +21,7 @@ dt {
         padding: 120px 10% 0;
         font-size: 2.5rem;
         text-align: center;
-        color: $front-color;
+        color: $active-title-color;
         background-color: $bg-color;
         margin-top: $active-margin;
         border: $active-border;

@@ -45,7 +45,7 @@ dt {
     &[data-active]:before {
         transition: right 0.75s ease-out, font-size 0.75s ease;
         right: 0;
-        top: 20px;
-        font-size: 70px;
+        top: 30px;
+        font-size: 4.5rem;
     }
 }

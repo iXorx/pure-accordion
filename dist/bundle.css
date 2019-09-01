@@ -53,8 +53,8 @@ dd {
   transition: max-height 0.15s;
   margin: 0;
   padding: 0 10%;
-  color: #666;
-  background-color: #f7f7f7;
+  color: #46494C;
+  background-color: #f5f5f5;
 }
 dd:last-child {
   border-radius: 0 0 4px 4px;
@@ -64,7 +64,7 @@ dt[data-active] + dd {
   transition: max-height 1s ease-out 0.2s;
   padding-bottom: 20px;
   margin-bottom: 5px;
-  border: 1px solid #666;
+  border: 1px solid #a13c3f;
   border-top-width: 0;
   border-radius: 0 0 4px 4px;
   box-shadow: 0 5px 0 -4px rgba(0, 0, 0, 0.3);
@@ -84,8 +84,8 @@ dt {
   text-transform: uppercase;
   font-size: 1.5rem;
   cursor: pointer;
-  color: #a13c3f;
-  background-color: #da6f51;
+  color: #F5F7DC;
+  background-color: #1985A1;
 }
 dt:first-child {
   border-radius: 4px 4px 0 0;
@@ -97,10 +97,10 @@ dt[data-active] {
   padding: 120px 10% 0;
   font-size: 2.5rem;
   text-align: center;
-  color: #666;
-  background-color: #f7f7f7;
+  color: #cc7779;
+  background-color: #f5f5f5;
   margin-top: 5px;
-  border: 1px solid #666;
+  border: 1px solid #a13c3f;
   border-bottom-width: 0;
   border-radius: 4px 4px 0 0;
 }
@@ -140,18 +140,22 @@ dt:nth-child(5):before {
 dt[data-active]:before {
   transition: right 0.75s ease-out, font-size 0.75s ease;
   right: 0;
-  top: 20px;
-  font-size: 70px;
+  top: 30px;
+  font-size: 4.5rem;
+}
+
+.copyright {
+  color: #1985A1;
+  font-size: 0.65rem;
+  padding: 20px;
+  text-align: center;
 }
 
 body {
-  background: whitesmoke;
-  color: gray;
+  background: #F5F7DC;
   font-family: "Noto Sans", sans-serif;
-}
-@media (max-width: 599px) {
-  body {
-    font-size: 1rem;
-    background: white;
-  }
+  /*@include for-phone-only {    
+      font-size: 1rem; 
+      background: white;
+  }*/
 }

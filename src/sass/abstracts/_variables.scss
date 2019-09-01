@@ -5,26 +5,36 @@ $dd-max-height: 400px;
 $active-margin: 5px;
 $default-border-radius: 4px;
 
+// Fonts
+$body-font: 'Noto Sans', sans-serif;
+$title-font: 'Fjalla One', sans-serif;
+
 // Colors
-$primary-color:#666;
+$body-bg: #F5F7DC;
+$light-color: #F5F7DC;
+$dark-color: #46494C;
+$primary-color:#1985A1;
+$gray: #f5f5f5;
+
 $bg: #f1f1f1;
 $active-bg: #f7f7f7;
 $active-color: #da734f;
 $default-bg: #da6f51;
 $default-color: #a13c3f;
+$hover-color: #cc7779;
 
-// Fonts
-$body-font: 'Noto Sans', sans-serif;
-$title-font: 'Fjalla One', sans-serif;
 
 // Components
+// default
+$default-title-color: $light-color;
+$default-bg-color: $primary-color;
+
 // active
-$front-color: $primary-color;
-$bg-color: $active-bg; 
+$front-color: $dark-color;
+$bg-color: $gray; 
 
-//$active-color: $primary-color;
-$active-title-color: $front-color;
-$active-border: 1px solid $front-color;
+$active-title-color: $hover-color;
+$active-border: 1px solid $default-color;
 
-$hover-color: lighten($default-color, 20)
+$hover-color: $hover-color;
  

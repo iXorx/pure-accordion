@@ -1,11 +1,9 @@
 body {
-    background: whitesmoke;
-    color: gray;
-    //font-family: 'SourceSansPro', Arial, Helvetica, sans-serif;
+    background: $body-bg;
     font-family: $body-font;
 
-    @include for-phone-only {    
+    /*@include for-phone-only {    
         font-size: 1rem; 
         background: white;
-    }
+    }*/
 }
