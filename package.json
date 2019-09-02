@@ -7,7 +7,9 @@
   "author": "Jordi Turull <jordi.frontend@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "webpack --config webpack.config.js",
+    "build:dev": "webpack --config webpack.config.base.js",
+    "build:prod": "webpack --config webpack.config.prod.js",
+    "start": "node ./node_modules/webpack-dev-server/bin/webpack-dev-server.js --hot --inline --config ./webpack.config.dev.js",
     "test": "jest --verbose",
     "test:coverage": "jest --coverage"
   },
@@ -28,7 +30,9 @@
     "postcss-loader": "^3.0.0",
     "sass": "^1.22.10",
     "sass-loader": "^7.3.1",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "webpack": "^4.39.2",
-    "webpack-cli": "^3.3.7"
+    "webpack-cli": "^3.3.7",
+    "webpack-dev-server": "^3.8.0"
   }
 }

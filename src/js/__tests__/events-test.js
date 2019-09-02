@@ -1,4 +1,4 @@
-import { createAndAppendElementInDescriptiveList } from "../fetchElements";
+import { createAndAppendElementInDescriptiveList } from "../fetch-elements";
 import { onClick } from "../events";
 
 describe('events', () => {

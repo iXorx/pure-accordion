@@ -35,14 +35,33 @@ Sure to follow the [SUIT](https://suitcss.github.io/) convention when working wi
 
 ## Deployment
 
-As mentioned [here](https://medium.com/linagora-engineering/deploying-your-js-app-to-github-pages-the-easy-way-or-not-1ef8c48424b7) the deployment process consist in pushing the changes into gh-pages branch. The ``/dist`` folder is "connected" with that branch.
+As mentioned [here](https://medium.com/linagora-engineering/deploying-your-js-app-to-github-pages-the-easy-way-or-not-1ef8c48424b7) the deployment 
+process consist in pushing the changes into ``gh-pages`` branch. 
+The ``/dist`` folder is "connected" with that branch.
 
-To pubblish a new version 
-
-git subtree
+To publish a new version is as easy as run the following commands from the root folder of the project:
 
 ```
-git subtree
+rm -rf dist
+git worktree add dist gh-pages
+```
+The commands above only are necessary the first time.
+
+```
+yarn build:prod
+cd dist
+git commit --all -m "Publish new version"
+git push origin gh-pages
+```
+
+## Running
+
+The application is deployed in [GitHub](https://ixorx.github.io/pure-accordion/)
+
+To run locally you can use ``webpack-dev-server`` with the following npm script:
+
+```
+yarn run start
 ```
 
 ## Icons

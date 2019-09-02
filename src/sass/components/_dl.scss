@@ -1,5 +1,5 @@
 dl {
-    min-width: $dl-min-witdh;
+    min-width: $dl-min-width;
     margin: auto;
     width: 90%;
 
@@ -7,7 +7,7 @@ dl {
         width: 70%;
     }
 
-    @include for-phone-only {    
+    @include for-phone-only {
         width: 100%;
     }
 }

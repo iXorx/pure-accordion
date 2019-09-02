@@ -1,8 +1,8 @@
-import { 
+import {
     createAndAppendElementInDescriptiveList,
     getAndAppendPopularFilms,
-    getPopularUrl 
-} from '../fetchElements'
+    getPopularUrl
+} from '../fetch-elements'
 describe('fetchElements', () => {
     beforeEach(() => {
         document.body.innerHTML = ('<dl></dl>')
