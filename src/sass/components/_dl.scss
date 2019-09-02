@@ -3,11 +3,14 @@ dl {
     margin: auto;
     width: 90%;
 
-    @include for-tablet-landscape-up {
-        width: 70%;
-    }
 
     @include for-phone-only {
         width: 100%;
+    }
+    @include for-tablet-landscape-up {
+        width: 70%;
+    }
+    @include for-desktop-up {
+        width: 50%;
     }
 }
