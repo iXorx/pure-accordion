@@ -1,0 +1,31 @@
+dt {
+    font-family: $title-font;
+    position: relative;
+    padding: $default-padding 50px 15px;
+    transition: background-color 0.25s ease, padding-top 0.5s ease, font-size 0.5s ease-out;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: $dt-color;
+    background-color: $dt-background;
+
+    &:hover {
+        background-color: $dt-hover;
+    }
+
+    &[data-active] {
+        padding: 120px 10% 0;
+        font-size: 2.5rem;
+        text-align: center;
+        color: $dt-active-color;
+        background-color: $dt-active-background;
+        margin-top: $active-element-margin;
+        border: $active-border;
+        border-bottom-width: 0;
+        border-radius: $default-border-radius $default-border-radius 0 0;
+
+        &:hover {
+            transition: background-color 0s ease;
+        }
+    }
+}

@@ -1,0 +1,27 @@
+dd {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.15s;
+    margin: 0;
+    padding: 0 10%;
+    color: $dd-color;
+    background-color: $dd-background;
+
+    &:last-child {
+        border-radius: 0 0 $default-border-radius $default-border-radius;
+    }
+
+
+    // active content
+    dt[data-active] + & {
+        max-height: $dd-max-height;
+        transition: max-height 1s ease-out 0.20s;
+        padding-bottom: $default-padding;
+        margin-bottom: $active-element-margin;
+
+        border: $active-border;
+        border-top-width: 0;
+        border-radius: 0 0 $default-border-radius $default-border-radius;
+        box-shadow: 0 5px 0 -4px rgba(0, 0, 0, 0.3)
+    }
+}

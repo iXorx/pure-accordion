@@ -1,0 +1,38 @@
+// Sizes
+$default-padding: 20px;
+$dl-min-width: 330px;
+$dd-max-height: 400px;
+$active-element-margin: 5px;
+$default-border-radius: 4px;
+
+// Fonts
+$body-font: 'Noto Sans', sans-serif;
+$title-font: 'Fjalla One', sans-serif;
+
+// Colors
+$black: #46494C;
+$white: #F1F1F1;
+$beige: #F5F7DC;
+$red: #CC7779;
+$blue: #1985A1;
+
+// Components
+// body
+$body-bg: $beige;
+$font-color: $blue;
+
+//dt
+$dt-color: $beige;
+$dt-background: $blue;
+$dt-hover: $red;
+
+//dd
+$dd-color: $black;
+$dd-background: $white;
+
+// dt-active
+$dt-active-color: $red;
+$dt-active-background: $dd-background;
+
+// Other
+$active-border: 1px solid $red;
