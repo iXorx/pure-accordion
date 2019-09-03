@@ -1,0 +1,51 @@
+// In order to enrich the UI and do not
+// change the HMTL, before pseudoelement
+// has been used to add an icon to the section
+dt:before {
+    font-family: 'icomoon' !important;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+
+    // Better Font Rendering
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    // Positioning
+    position: absolute;
+    top: 22px;
+    left: 15px;
+    text-align: center;
+    content: "\70"; // default youtube icon
+
+    // Animation
+    transition: right 0.25s ease-out, font-size 0.25s ease;
+    right: 100%;
+    font-size: 1.5rem;
+}
+
+dt {
+    // 1st element in the list shows a user icon
+    &:nth-child(1):before {
+        content: "\69";
+    }
+    // 2nd element in the list shows a truck
+    &:nth-child(3):before {
+        content: "\74";
+    }
+    // 3rd element in the list shows a packaje
+    &:nth-child(5):before {
+        content: "\61";
+    }
+
+    // Animation
+    &[data-active]:before {
+        transition: right 0.75s ease-out, font-size 0.75s ease;
+        right: 0;
+        top: 30px;
+        font-size: 4.5rem;
+    }
+}
